@@ -45,9 +45,9 @@ function LandingIntro() {
           </a>
           <RWebShare
             data={{
-              text: "Like humans, flamingos make friends for life",
-              url: "https://on.natgeo.com/2zHaNup",
-              title: "Flamingos",
+              text: "Crypto dashboard made by Himadri Das in Nov'22",
+              url: "crypto-tracker-dashboard.netlify.app",
+              title: "Crypto dashboard",
             }}
             onClick={() => console.log("shared successfully!")}
           >
