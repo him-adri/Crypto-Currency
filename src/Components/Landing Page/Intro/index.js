@@ -1,8 +1,9 @@
 import React from "react";
-import Button from '../../Common/Button/Button'
+import Button from "../../Common/Button/Button";
 import "./style.css";
 import { motion } from "framer-motion";
 import PhoneComponent from "./PhoneComponent";
+import { RWebShare } from "react-web-share";
 
 function LandingIntro() {
   return (
@@ -39,8 +40,19 @@ function LandingIntro() {
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, delay: 0.75 }}
         >
-          <Button text="Dashboard" />
-          <Button text="Share" />
+          <a href="/dashboard">
+            <Button text="Dashboard" />
+          </a>
+          <RWebShare
+            data={{
+              text: "Like humans, flamingos make friends for life",
+              url: "https://on.natgeo.com/2zHaNup",
+              title: "Flamingos",
+            }}
+            onClick={() => console.log("shared successfully!")}
+          >
+            <Button text="Share" />
+          </RWebShare>
         </motion.div>
       </div>
       <PhoneComponent />

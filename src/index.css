@@ -10,7 +10,20 @@
   --green: #61c96f;
   --red: #f94141;
 }
+[data-theme="light"] {
+  --white: #ffffff;
+  --black: #111;
+  --grey: #888;
+  --darkgrey: #1b1b1b;
+}
 
+
+[data-theme="dark"] {
+  --white: #111;
+  --black: #fff;
+  --grey: #888;
+  --darkgrey: #f3f3f3;
+}
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -61,4 +74,67 @@ img {
 
 a {
   text-decoration: none;
+  color: var(--white);
+}
+.top-btn {
+  padding: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--darkgrey);
+  border-radius: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  border: 2px solid var(--blue);
+  cursor: pointer;
+  z-index: 1000;
+}
+.grey-cointainer{
+  width: 90%;
+  background-color: var(--darkgrey);
+  display: block;
+  margin: 0.5rem auto;
+  padding: 0.2rem;
+  border-radius: 0.8rem;
+}
+.div-flex{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 1.5rem;
+}
+.select-coin{
+  margin: 0.7rem;
+}
+
+
+
+
+@media only screen and (max-width: 800px) {
+  .top-btn {
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+  .grey-cointainer{
+    width: 100%;
+    background-color: var(--darkgrey);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.8rem;
+  }
+  .div-flex{
+    gap: 0.5rem;
+    margin: 1rem 0.5rem;
+    justify-content: space-between;
+  }
+  .crypto-heading{
+    display: none;
+  }  
+  .select-coin{
+    max-width: 100px !important;
+    font-size: 0.8rem;
+  }
 }

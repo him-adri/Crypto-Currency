@@ -44,6 +44,11 @@
 .drawerDiv {
   display: none;
 }
+.switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @media only screen and (max-width: 800px) {
   .drawerDiv {
@@ -56,5 +61,10 @@
 
   .heading {
     font-size: 1rem;
+  }
+  .switch {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
   }
 }
