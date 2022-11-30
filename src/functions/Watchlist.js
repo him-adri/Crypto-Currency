@@ -1,6 +1,5 @@
 import { Alert } from '@mui/material';
 import { ToastContainer, toast } from 'react-toastify';
-import AlertBox from '../Components/AlertBox/alert';
 
 export const addToWatchlist = (id) => {
     const previousList = localStorage.getItem("watchlist");
