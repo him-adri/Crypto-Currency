@@ -63,6 +63,9 @@ function Header() {
         <a href="/compare">
           <p className="link">Compare</p>
         </a>
+        <a href="/watchlist">
+          <p className="link">Watchlist</p>
+        </a>
         <a href="/dashboard">
           <Button text="Dashboard" />
         </a>

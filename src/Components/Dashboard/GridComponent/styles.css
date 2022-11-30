@@ -38,7 +38,7 @@
 }
 
 .coin-name {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   color: var(--grey);
 }
 
@@ -116,12 +116,15 @@
   border: 2px solid var(--red);
   transition: all 0.3s;
 }
+.button-stats{
+  width: 100%;
+  margin-top: 1rem;
+}
+.bookmark-icon-div:hover{
+  background-color: #5297ff56;;
+}
 
 @media only screen and (max-width: 800px) {
-  .info-flex {
-    width: 80%;
-  }
-
   .coin-chip {
     min-width: 0px;
     padding: 0.25rem 0.5rem;

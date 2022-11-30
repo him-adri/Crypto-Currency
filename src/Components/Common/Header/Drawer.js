@@ -68,6 +68,9 @@ export default function MobileDrawer() {
           <a href="/compare">
             <p className="link">Compare</p>
           </a>
+          <a href="/watchlist">
+          <p className="link">Watchlist</p>
+        </a>
           <a href="/dashboard">
             <p className="link">Dashboard</p>
           </a>

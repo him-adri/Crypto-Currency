@@ -19,10 +19,6 @@ function CoinPage() {
   const [days, setDays] = useState(120);
   const [loading, setLoading] = useState(true);
   const [priceType, setpriceType] = useState("prices");
-
-  const today = new Date();
-  const priorDate = new Date(new Date().setDate(today.getDate() - days));
-
   const [chartData, setChartData] = useState({
     labels: [],
     datasets: [{}],
@@ -157,18 +153,18 @@ function CoinPage() {
         <Loading />
       ) : (
         <>
-          <div className="grey-cointainer" style={{marginBottom: "1rem"}}>
-            <List coin={coin} delay={0.5} />
+          <div className="grey-cointainer" style={{ marginBottom: "1rem" }}>
+            <List coin={coin} delay={0.5} isStatsButton={true} />
           </div>
-          <div className="grey-cointainer" style={{marginBottom: "1rem"}}>
+          <div className="grey-cointainer" style={{ marginBottom: "1rem" }}>
             <SelectDays days={days} handleDaysChange={handleDaysChange} />
             <TogglePrice
               priceType={priceType}
               handleChange={handlePriceChange}
             />
-            <LineChart chartData={chartData} options={options}/>
+            <LineChart chartData={chartData} options={options} />
           </div>
-          <div className="grey-cointainer" style={{marginBottom: "2rem"}}>
+          <div className="grey-cointainer" style={{ marginBottom: "2rem" }}>
             <Info name={coin.name} desc={coin.desc} />
           </div>
         </>
