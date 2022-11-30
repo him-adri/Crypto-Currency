@@ -6,36 +6,38 @@ import CoinPage from './Pages/coin';
 import ComparePage from './Pages/compare';
 import WatchListPage from './Pages/watchList';
 import { useEffect } from 'react';
+import MouseIcon from '@mui/icons-material/Mouse';
 
 function App() {
-  var cursor;
-  var cursorPointer;
+  var arrow;
 
   useEffect(() => {
-    cursor = document.getElementById("cursor");
+    arrow = document.getElementById("arrow");
     document.body.addEventListener("mousemove", function (e) {
       return (
-        (cursor.style.left = e.clientX + "px"),
-        (cursor.style.top = e.clientY + "px")
+        (arrow.style.left = e.clientX + "px"),
+        (arrow.style.top = e.clientY + "px")
       );
     });
     document.body.addEventListener("mousedown", function (e) {
       return (
-        (cursor.style.height = "0.5rem"),
-        (cursor.style.width = "0.5rem")
+        (arrow.style.height = "3.3rem"),
+        (arrow.style.width = "3.3rem")
       );
     });
     document.body.addEventListener("mouseup", function (e) {
       return (
-        (cursor.style.height = "0.3rem"),
-        (cursor.style.width = "0.3rem")      
+        (arrow.style.height = "1.3rem"),
+        (arrow.style.width = "1.3rem")      
       );
     });
   }, []);
 
   return (
     <div>
-      <div className="cursor" id="cursor" />
+      <div className='arrow' id="arrow">
+        <MouseIcon />
+      </div>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} ></Route>

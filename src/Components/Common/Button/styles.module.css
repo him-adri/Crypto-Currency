@@ -6,7 +6,6 @@
     background-color: var(--blue);
     border-radius: 2rem;
     font-size: 0.8rem;
-    cursor: pointer;
     min-width: 65px;
     text-align: center;
   }
@@ -25,7 +24,6 @@
     border: 2px solid var(--blue);
     border-radius: 2rem;
     font-size: 0.8rem;
-    cursor: pointer;
     min-width: 65px;
     text-align: center;
   }
