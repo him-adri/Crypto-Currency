@@ -40,7 +40,7 @@ function Footer() {
         </div>
       </div>
       <div className="copyright">
-        <p>Copyright <span> @ </span> {new Date().getFullYear()}</p>
+        <p>Copyright <span> @ </span> {new Date().getFullYear()} | Made by Himadri Das with ❤️</p>
       </div>
     </div>
   );
