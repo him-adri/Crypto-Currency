@@ -2,6 +2,7 @@
     color: #fff;
     font-weight: 600;
     text-transform: capitalize;
+    width: fit-content;
     padding: 0.5rem 1rem;
     background-color: var(--blue);
     border-radius: 2rem;
@@ -19,7 +20,7 @@
     color: var(--white);
     font-weight: 600;
     text-transform: capitalize;
-    width: min-content;
+    width: fit-content;
     padding: 0.5rem 1rem;
     border: 2px solid var(--blue);
     border-radius: 2rem;

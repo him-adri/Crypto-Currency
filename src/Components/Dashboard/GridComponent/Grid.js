@@ -116,7 +116,7 @@ function Grid({ coin, delay }) {
       </div>
       <a href={`/coin/${coin.id}`}>
         <div>
-          <Button text="Coin Stats" className="button-stats" />
+          <Button text="See Coin Stats" className="button-stats" />
         </div>
       </a>
     </motion.div>

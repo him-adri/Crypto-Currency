@@ -101,7 +101,7 @@ function List({ coin, delay, isStatsButton }) {
       ) : (
         <a href={`/coin/${coin.id}`}>
           <div className="button-stats-div">
-            <Button text="Coin Stats" className="button-stats" />
+            <Button text="See Coin Stats" className="button-stats" />
           </div>
         </a>
       )}

@@ -7,6 +7,7 @@ import Search from "../Components/Dashboard/Search/search";
 import Loading from "../Components/Common/Loading/loading";
 import PaginationComponent from "../Components/Dashboard/PaginationComponent/Pagination";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import Button from "../Components/Common/Button/Button";
 
 function DashboardPage() {
   const [data, setData] = useState([]);
@@ -21,7 +22,7 @@ function DashboardPage() {
         console.log("RESOPONSE DATA", response.data);
         setData(response.data);
         setLoading(false);
-        setPageCoins(response.data.slice(0,10));
+        setPageCoins(response.data.slice(0, 10));
       } else {
         console.log("ERROR");
       }
@@ -69,10 +70,39 @@ function DashboardPage() {
       ) : (
         <>
           <Search search={search} setSearch={setSearch} />
-          <Tabs data={search ? filteredCoins : pageCoins} />
-          <div onClick={() => topFunction()} id="myBtn" className="top-btn">
-            <ArrowUpwardIcon sx={{ color: "var(--blue)" }} />
-          </div>
+          {search && filteredCoins.length == 0 ? (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+                minHeight: "80vh",
+              }}
+            >
+              <img
+                style={{ textAlign: "center", color: "var(--grey)" }}
+                src={require("../Assets/200w-unscreen.gif")}
+              />
+              <h1 style={{ textAlign: "center" }}>
+                Can't Find What You Were Looking For 🥲
+              </h1>
+              <div
+                style={{
+                  marginTop: "2rem",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <a href="/dashboard">
+                  <Button text="Clear Search" onClick={() => setSearch("")} />
+                </a>
+              </div>
+            </div>
+          ) : (
+            <Tabs data={search ? filteredCoins : pageCoins} />
+          )}
           {!search && (
             <PaginationComponent
               pageNumber={pageNumber}

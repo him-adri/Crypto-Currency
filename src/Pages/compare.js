@@ -13,6 +13,7 @@ import { convertNumbers } from "../functions/convertNumber";
 import { getCoinData } from "../functions/getCoinData";
 import { getCoinPrices } from "../functions/getCoinPrices";
 import { getDateArray } from "../functions/getDateArray";
+import { setCoinDataFunction } from "../functions/setCoinData";
 
 const ComparePage = () => {
   const [coin1, setCoin1] = useState("bitcoin"); //to have the coins in the mui ~select
@@ -101,34 +102,10 @@ const ComparePage = () => {
     const data2 = await getCoinData(coin2);
 
     if (data1) {
-      // console.log("data", data1);
-      setCoinData1({
-        id: data1.id,
-        name: data1.name,
-        symbol: data1.symbol,
-        image: data1.image.large,
-        desc: data1.description.en,
-        price_change_percentage_24h:
-          data1.market_data.price_change_percentage_24h,
-        total_volume: data1.market_data.total_volume.usd,
-        current_price: data1.market_data.current_price.usd,
-        market_cap: data1.market_data.market_cap.usd,
-      });
+      setCoinDataFunction(setCoinData1, data1);
     }
     if (data2) {
-      console.log("data", data2);
-      setCoinData2({
-        id: data2.id,
-        name: data2.name,
-        symbol: data2.symbol,
-        image: data2.image.large,
-        desc: data2.description.en,
-        price_change_percentage_24h:
-          data2.market_data.price_change_percentage_24h,
-        total_volume: data2.market_data.total_volume.usd,
-        current_price: data2.market_data.current_price.usd,
-        market_cap: data2.market_data.market_cap.usd,
-      });
+      setCoinDataFunction(setCoinData2, data2);
     }
     getPrices(coin1, coin2, days, priceType);
     setLoading(false);
@@ -171,36 +148,14 @@ const ComparePage = () => {
       setCoin1(e.target.value);
       const data1 = await getCoinData(e.target.value);
       if (data1) {
-        setCoinData1({
-          id: data1.id,
-          name: data1.name,
-          symbol: data1.symbol,
-          image: data1.image.large,
-          desc: data1.description.en,
-          price_change_percentage_24h:
-            data1.market_data.price_change_percentage_24h,
-          total_volume: data1.market_data.total_volume.usd,
-          current_price: data1.market_data.current_price.usd,
-          market_cap: data1.market_data.market_cap.usd,
-        });
+        setCoinDataFunction(setCoinData1, data1);
         getPrices(e.target.value, coin2, days, priceType);
       }
     } else {
       setCoin2(e.target.value);
       const data2 = await getCoinData(e.target.value);
       if (data2) {
-        setCoinData2({
-          id: data2.id,
-          name: data2.name,
-          symbol: data2.symbol,
-          image: data2.image.large,
-          desc: data2.description.en,
-          price_change_percentage_24h:
-            data2.market_data.price_change_percentage_24h,
-          total_volume: data2.market_data.total_volume.usd,
-          current_price: data2.market_data.current_price.usd,
-          market_cap: data2.market_data.market_cap.usd,
-        });
+        setCoinDataFunction(setCoinData2, data2);
         getPrices(coin1, e.target.value,days, priceType);
       }
     }
@@ -238,10 +193,10 @@ const ComparePage = () => {
       ) : (
         <>
           <div className="grey-cointainer" style={{marginBottom: "1rem"}}>
-            <List coin={coinData1} />
+            <List coin={coinData1} delay={0.3}/>
           </div>
           <div className="grey-cointainer" style={{marginBottom: "1rem"}}>
-            <List coin={coinData2}/>
+            <List coin={coinData2} delay={0.3}/>
           </div>
           <div className="grey-cointainer" style={{marginBottom: "1rem"}}>
           <TogglePrice
@@ -262,5 +217,4 @@ const ComparePage = () => {
     </>
   );
 };
-
 export default ComparePage;

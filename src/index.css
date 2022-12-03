@@ -118,14 +118,16 @@ a {
   position: fixed;
   border-radius: 50%;
   transform: translateX(-50%) translateY(-50%);
+  color: var(--white);
   pointer-events: none;
   z-index: 10000;
   height: 0.3rem;
   width: 0.3rem;
-  transition: all 400ms ease-out;
+  transition: all 100ms ease-out;
 }
 
 @media only screen and (max-width: 800px) {
+ 
   .top-btn {
     right: 0.5rem;
     bottom: 0.5rem;

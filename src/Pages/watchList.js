@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Button from "../Components/Common/Button/Button";
 import Header from "../Components/Common/Header";
 import TopButton from "../Components/Common/TopButton/topButton";
-import Search from "../Components/Dashboard/Search/search";
 import Tabs from "../Components/Dashboard/Tabs/tabs";
 import { get100Coins } from "../functions/get100Coins";
 

@@ -21,8 +21,8 @@ function App() {
     });
     document.body.addEventListener("mousedown", function (e) {
       return (
-        (arrow.style.height = "3.3rem"),
-        (arrow.style.width = "3.3rem")
+        (arrow.style.height = "2.3rem"),
+        (arrow.style.width = "2.3rem")
       );
     });
     document.body.addEventListener("mouseup", function (e) {
@@ -35,8 +35,8 @@ function App() {
 
   return (
     <div>
-      <div className='arrow' id="arrow">
-        <MouseIcon />
+      <div>
+        <MouseIcon  className='arrow' id="arrow" />
       </div>
       <BrowserRouter>
         <Routes>
